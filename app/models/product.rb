@@ -1,3 +1,4 @@
+#models
 class Product < ActiveRecord::Base
 
   monetize :price_cents, numericality: true
