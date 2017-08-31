@@ -26,13 +26,13 @@
         </dl>
       </div>
     </div>
+    <!-- PAST REVIEWS-->
     <%= render 'review' %>
     <h3 class="page-header"> Reviews: </h3>
     <br/>
-    <% @product.reviews.each do |review| %>
-      <%= render 'rating', rating: review.rating, description: review.description, user: review.user_id, user: review.user.full_name, created_at: review.created_at  %>
-    <% end %>
-
+    <% @product.reviews.reverse.each do |r| %>
+      <%= render 'rating', rating: r.rating, description: r.description, user: r.user_id, user: r.user.full_name, created_at: r.created_at  %>
+       <% end %>
 
   </article>
 

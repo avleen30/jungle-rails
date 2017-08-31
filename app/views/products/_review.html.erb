@@ -1,6 +1,10 @@
-<br/><br/> <% if @average.to_i == 0 %>           <h4>This product has not been
-rated yet.</h4>           <% else %>           <h4><dt>Product Rating</dt>
-<dd><%= @average.to_i %> out of 5</dd></h4>           <% end %>
+<br/><br/>
+<% if @average.to_i == 0 %>
+<h4>This product has not been rated yet.</h4>
+<% else %>
+<h4><dt>Product Rating</dt>
+<dd><%= @average.to_i %> out of 5</dd></h4>
+<% end %>
 
 <% if current_user %>
   <h2>Leave a Review:</h2>
