@@ -1,6 +1,8 @@
 #step 2: adding categories controller
 class Admin::CategoriesController < ApplicationController
 
+  http_basic_authenticate_with name: ENV['username'], password: ENV['password']
+
   def show
     @category = Category.find(params[:id])
     @products = @category.products.order(created_at: :desc)
