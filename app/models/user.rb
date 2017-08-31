@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  has_many :orders
+
   def self.authenticate_with_credentials(email, password)
     new_email = email.downcase
     user = User.find_by_email(new_email)
@@ -18,4 +20,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

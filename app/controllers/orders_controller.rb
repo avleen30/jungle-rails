@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_total, # in cents
-      description: "Khurram Virani's Jungle Order",
+      description: "Avleen's Jungle Order",
       currency:    'cad'
     )
   end
@@ -40,6 +40,8 @@ class OrdersController < ApplicationController
       email: params[:stripeEmail],
       total_cents: cart_total,
       stripe_charge_id: stripe_charge.id, # returned by stripe
+      user: current_user,
+
     )
     cart.each do |product_id, details|
       if product = Product.find_by(id: product_id)

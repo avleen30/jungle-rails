@@ -33,9 +33,10 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 puts "Re-creating Products ..."
 
+LineItem.destroy_all
 Product.destroy_all
 
-cat1.products.create!({
+prod1 = cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
@@ -43,7 +44,7 @@ cat1.products.create!({
   price: 64.99
 })
 
-cat1.products.create!({
+prod2 = cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel2.jpg'),
@@ -51,7 +52,7 @@ cat1.products.create!({
   price: 124.99
 })
 
-cat1.products.create!({
+prod3 = cat1.products.create!({
   name:  'Hipster Hat',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel3.jpg'),
@@ -131,6 +132,128 @@ cat3.products.create!({
   quantity: 0,
   price: 2_483.75
 })
+
+## USERS
+
+User.destroy_all
+
+user1 = User.create!({
+  first_name: 'Ruby',
+  last_name: 'Gem',
+  email: 'ruby.gem@gmail.com',
+  password: '123',
+  password_confirmation: '123'
+  })
+
+user2 = User.create!({
+  first_name: 'Avi',
+  last_name: 'Sings',
+  email: 'Avi@gmail.com',
+  password: '123',
+  password_confirmation: '123'
+  })
+
+user3 = User.create!({
+  first_name: 'Bob',
+  last_name: 'Marley',
+  email: 'iamcool@gmail.com',
+  password: '123',
+  password_confirmation: '123'
+  })
+
+user4 = User.create!({
+  first_name: 'Mahatma',
+  last_name: 'Gandhi',
+  email: 'peace@gmail.com',
+  password: '123',
+  password_confirmation: '123'
+  })
+
+user5 = User.create!({
+  first_name: 'Mary',
+  last_name: 'Poppins',
+  email: 'Supercalafajalistickexpialadojus@gmail.com',
+  password: '123',
+  password_confirmation: '123'
+  })
+
+
+
+## LINE ITEMS
+
+line_item1 = LineItem.create({
+  product: prod1,
+  quantity: 1,
+  item_price_cents: 1234,
+  total_price_cents: 3000
+  })
+
+line_item2 = LineItem.create({
+
+  product: prod2,
+  quantity: 2,
+  item_price_cents: 4500,
+  total_price_cents: 9000
+  })
+
+line_item3 = LineItem.create({
+
+  product: prod3,
+  quantity: 1,
+  item_price_cents: 3000,
+  total_price_cents: 3000
+  })
+
+line_item4 = LineItem.create({
+
+  product: prod1,
+  quantity: 1,
+  item_price_cents: 2100,
+  total_price_cents: 2100
+  })
+
+## ORDERS
+
+user1.orders.create!({
+  line_items: [line_item1],
+  total_cents: 3000,
+  stripe_charge_id: 12345,
+  email: 'ruby.gem@gmail.com',
+  user_id: 1
+  })
+
+user2.orders.create!({
+  line_items: [line_item1],
+  total_cents: 3000,
+  stripe_charge_id: 12345,
+  email: 'Avi@gmail.com',
+  user_id: 2
+  })
+
+user3.orders.create!({
+  line_items: [line_item1],
+  total_cents: 3000,
+  stripe_charge_id: 12345,
+  email: 'iamcool@gmail.com',
+  user_id: 3
+  })
+
+user4.orders.create!({
+  line_items: [line_item1],
+  total_cents: 3000,
+  stripe_charge_id: 12345,
+  email: 'peace@gmail.com',
+  user_id: 4
+  })
+
+user5.orders.create!({
+  line_items: [line_item1],
+  total_cents: 3000,
+  stripe_charge_id: 12345,
+  email: 'Supercalafajalistickexpialadojus@gmail.com',
+  user_id: 5
+  })
+
 
 
 puts "DONE!"
