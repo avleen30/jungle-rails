@@ -4,8 +4,8 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
-<div class="order-summary jumbotron">
- <h4>Thank you for your order, <%= @order.user.full_name %> <br/><br/>Below are your order details
+ <h4>Thank you for your order, <%= @order.user.full_name %> <br/><h4>An email has been sent to <%= @order.user.email %></h4>
+ <br/><h3>Below are your order details</h3>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -38,10 +38,5 @@
         </tr>
       </tfoot>
     </table>
-
-    <div class="col-md-12">
-      <h4>An email has been send to <%= @order.user.email %></h4>
-    </div>
-</div>
 
 </section>
