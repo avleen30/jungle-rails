@@ -20,9 +20,11 @@
       </thead>
 
       <tbody>
+      <% @cart_total = 0 %>
       <% line_items = LineItem.where(order_id: @order.id) %>
       <% line_items.each do |line_item| %>
-        <%= render 'item', product_id: line_item.product_id, line_total: line_item.total_price %>
+        <%= render 'item', line_item: line_item, product_id: line_item.product_id, line_total: line_item.total_price %>
+      <% @cart_total += line_item.total_price%>
       <% end %>
       </tbody>
       <tfoot>
