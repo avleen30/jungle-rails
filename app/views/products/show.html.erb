@@ -22,12 +22,7 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-          <% if @average.to_i == 0 %>
-          This product has not been rated yet.
-          <% else %>
-          <h4><dt>Product Rating</dt>
-            <dd><%= @average.to_i %> out of 5</dd></h4>
-          <% end %>
+
         </dl>
       </div>
     </div>

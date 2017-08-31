@@ -275,14 +275,14 @@ Review.create!({
 })
 
 Review.create!({
-  user: User.first,
+  user: User.third,
   product: Product.first,
   rating: 3,
   description: 'Dude yess'
 })
 
 Review.create!({
-  user: User.third,
+  user: User.fifth,
   product: Product.last,
   rating: 5,
   description: 'LOVE this?'
@@ -296,10 +296,52 @@ Review.create!({
 })
 
 Review.create!({
-  user: User.second,
+  user: User.sixth,
   product: Product.fifth,
   rating: 4,
   description: 'this made my day!'
+})
+
+Review.create!({
+  user: User.seventh,
+  product: Product.fifth,
+  rating: 4,
+  description: 'this made my day!'
+})
+
+Review.create!({
+  user: User.ninth,
+  product: Product.fifth,
+  rating: 4,
+  description: 'this made my day!'
+})
+
+Review.create!({
+  user: User.tenth,
+  product: Product.fifth,
+  rating: 4,
+  description: 'this made my day!'
+})
+
+Review.create!({
+  user: User.eleventh,
+  product: Product.fourth,
+  rating: 4,
+  description: 'this made my day!'
+})
+
+Review.create!({
+  user: User.last,
+  product: Product.third,
+  rating: 4,
+  description: 'this made my day!'
+})
+
+Review.create!({
+  user: User.eigth,
+  product: Product.second,
+  rating: 2,
+  description: 'Keep your peace on this!'
 })
 
 puts "DONE!"
