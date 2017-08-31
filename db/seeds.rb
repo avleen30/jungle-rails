@@ -254,6 +254,52 @@ user5.orders.create!({
   user_id: 5
   })
 
+#REVIEWS
 
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+Review.create!({
+  user: User.first,
+  product: Product.second,
+  rating: 5,
+  description: 'Curious....very Curious!!'
+})
+
+Review.create!({
+  user: User.second,
+  product: Product.first,
+  rating: 1,
+  description: 'Dear god why?'
+})
+
+Review.create!({
+  user: User.first,
+  product: Product.first,
+  rating: 3,
+  description: 'Dude yess'
+})
+
+Review.create!({
+  user: User.third,
+  product: Product.last,
+  rating: 5,
+  description: 'LOVE this?'
+})
+
+Review.create!({
+  user: User.fourth,
+  product: Product.fourth,
+  rating: 2,
+  description: 'I am not sure why I bought this'
+})
+
+Review.create!({
+  user: User.second,
+  product: Product.fifth,
+  rating: 4,
+  description: 'this made my day!'
+})
 
 puts "DONE!"
