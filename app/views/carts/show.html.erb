@@ -1,9 +1,14 @@
 <section class="cart-show">
-
+<% if cart.size == 0 %>
+  <div class="row-md-12">
+  <h1>Your cart is empty.</h1>
+  <br/>
+  <%= link_to 'Return Home to Continue Shopping.', :root %>
+  </div>
+<% else %>
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -32,7 +37,7 @@
       </tfoot>
     </table>
   </div>
-
+<% if current_user %>
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -43,10 +48,14 @@
           data-name="Jungle"
           data-description="Your Jungle Order"
           data-locale="auto"
+          data-email=<%= current_user.email %>
           data-currency="cad">
         </script>
       <% end %>
     </div>
   </div>
-
+<% else %>
+  <h3>To Process this order, please <%= link_to  "Login.", '/login' %></h3>
+<% end %>
+<% end %>
 </section>
