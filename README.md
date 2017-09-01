@@ -4,12 +4,12 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 
 ## Screenshots
-![screenshot of Home_page](https://github.com/avleen30/TinyApp/blob/master/Docs/Login.png?raw=true)
-![screenshot of registration page](https://github.com/avleen30/TinyApp/blob/master/Docs/register.png?raw=true)
-![screenshot for getting a short URL](https://github.com/avleen30/TinyApp/blob/master/Docs/GetaShortURL.png?raw=true)
-![screenshot of short URL's](https://github.com/avleen30/TinyApp/blob/master/Docs/shortURL.png?raw=true)
-![screenshot of Home Page](https://github.com/avleen30/TinyApp/blob/master/Docs/userHomePage.png?raw=true)
-
+![screenshot of Home_page](https://github.com/avleen30/jungle-rails/blob/master/Docs/Home_page.png?raw=true)
+![screenshot of Login page](https://github.com/avleen30/jungle-rails/blob/master/Docs/Login.png?raw=true)
+![screenshot for cart](https://github.com/avleen30/jungle-rails/blob/master/Docs/cart.png?raw=true)
+![screenshot of order page](https://github.com/avleen30/jungle-rails/blob/master/Docs/order.png?raw=true)
+![screenshot of Product and rating page](https://github.com/avleen30/jungle-rails/blob/master/Docs/product.png?raw=true)
+![screenshot of Admin page](https://github.com/avleen30/jungle-rails/blob/master/Docs/Admin.png?raw=true)
 
 
 ## Setup
