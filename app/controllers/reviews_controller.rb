@@ -12,6 +12,14 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    if Review.destroy(params :id)
+    redirect_to "/products/#{params[:product_id]}"
+    else
+     redirect_to "/"
+    end
+  end
+
   private
     def review_params
       params.require(:review).permit(:rating, :description)
