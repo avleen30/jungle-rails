@@ -13,10 +13,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    if Review.destroy(params :id)
-    redirect_to "/products/#{params[:product_id]}"
-    else
-     redirect_to "/"
+    review = Review.find(params[:id])
+    review.destroy
+    respond_to do |format|
+    redirect_to "/products/#{params[:product_id]}", notice: 'Review was successfully destroyed.'
     end
   end
 

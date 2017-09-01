@@ -3,6 +3,15 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 
+## Screenshots
+![screenshot of Home_page](https://github.com/avleen30/TinyApp/blob/master/Docs/Login.png?raw=true)
+![screenshot of registration page](https://github.com/avleen30/TinyApp/blob/master/Docs/register.png?raw=true)
+![screenshot for getting a short URL](https://github.com/avleen30/TinyApp/blob/master/Docs/GetaShortURL.png?raw=true)
+![screenshot of short URL's](https://github.com/avleen30/TinyApp/blob/master/Docs/shortURL.png?raw=true)
+![screenshot of Home Page](https://github.com/avleen30/TinyApp/blob/master/Docs/userHomePage.png?raw=true)
+
+
+
 ## Setup
 
 1. Fork & Clone

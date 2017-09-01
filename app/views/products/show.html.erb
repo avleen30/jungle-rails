@@ -32,16 +32,11 @@
     <h3 class="page-header"> Reviews: </h3>
     <br/>
 
-    <% if @average.to_i == 0 %>
-      <h4>This product has not been rated yet.</h4>
-      <% else %>
-      <h4><dt>Product Rating</dt>
-      <dd><%= @average.to_i %> out of 5</dd></h4>
-    <% end %>
 
     <% @product.reviews.reverse.each do |r| %>
-      <%= render 'rating', rating: r.rating, description: r.description, user: r.user_id, user: r.user.full_name, created_at: r.created_at  %>
-       <% end %>
+    <%= render 'rating', rating: r.rating, description: r.description, user_id: r.user_id, user: r.user.full_name, created_at: r.created_at, review: r %>
+
+    <% end %>
 
   </article>
 
